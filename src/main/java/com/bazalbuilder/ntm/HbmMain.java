@@ -15,17 +15,26 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.bazalbuilder.ntm.core;
+package com.bazalbuilder.ntm;
 
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.sound.BlockSoundGroup;
+import com.bazalbuilder.ntm.block.HbmBlocks;
+import com.bazalbuilder.ntm.item.HbmItemGroups;
+import com.bazalbuilder.ntm.item.HbmItems;
+import net.fabricmc.api.ModInitializer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-public class HBMBlockSettings {
-	public static AbstractBlock.Settings ore(boolean deepslate) {
-		return AbstractBlock.Settings.create()
-			.requiresTool()
-			.sounds(deepslate ? BlockSoundGroup.DEEPSLATE : BlockSoundGroup.STONE)
-			.hardness(deepslate ? 4.5f : 3f)
-			.resistance(3f);
+public class HbmMain implements ModInitializer {
+	public static final String MOD_ID = "hbm";
+	public static final String NAME = "Hbm's Nuclear Tech Mod - Refabricated";
+
+	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+
+	@Override
+	public void onInitialize() {
+		LOGGER.info("Initializing mod {}", MOD_ID);
+		HbmItems.initialize();
+		HbmItemGroups.initialize();
+		HbmBlocks.initialize();
 	}
 }

@@ -4,28 +4,33 @@
   "version": "${version}",
   "name": "Hbm's Nuclear Tech Mod - Refabricated",
   "description": "Algebra's like sheet music. The important thing is isn't can you read music, it's can you hear it.",
-  "authors": [],
+  "authors": [
+		"Bazalbuilder",
+		"HbmMods"
+	],
   "contact": {},
   "license": "GPL-3.0",
-  "icon": "assets/ntm/icon.png",
+  "icon": "assets/hbm/icon.png",
   "environment": "*",
   "entrypoints": {
     "fabric-datagen": [
-			"com.bazalbuilder.ntm.client.HBMDataGen"
+			"com.bazalbuilder.ntm.HbmDataGen"
     ],
     "client": [
-			"com.bazalbuilder.ntm.client.HBMClient"
+			"com.bazalbuilder.ntm.HbmClient"
     ],
     "main": [
-			"com.bazalbuilder.ntm.HBM"
+			"com.bazalbuilder.ntm.HbmMain"
     ]
   },
   "mixins": [
-		"ntm.mixins.json"
+		"ntm.mixins.json",
+		"ntm.client.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=${loader_version}",
-    "fabric-api": "*",
-    "minecraft": "${minecraft_version}"
-  }
+    "minecraft": "${minecraft_version}",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
 }
