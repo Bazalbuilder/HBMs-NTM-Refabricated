@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "hbm:block/shredder_bottom",
+    "front": "hbm:block/shredder_front",
+    "side": "hbm:block/shredder_side",
+    "top": "hbm:block/shredder_top"
+  }
+}

@@ -14,13 +14,13 @@
   "environment": "*",
   "entrypoints": {
     "fabric-datagen": [
-			"com.bazalbuilder.ntm.HbmDataGen"
+			"com.bazalbuilder.hbm.HbmDataGen"
     ],
     "client": [
-			"com.bazalbuilder.ntm.HbmClient"
+			"com.bazalbuilder.hbm.HbmClient"
     ],
     "main": [
-			"com.bazalbuilder.ntm.HbmMain"
+			"com.bazalbuilder.hbm.HbmMain"
     ]
   },
   "mixins": [

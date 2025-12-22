@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "com.bazalbuilder.ntm.mixin",
+  "package": "com.bazalbuilder.hbm.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
   ],

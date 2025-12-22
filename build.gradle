@@ -1,13 +1,13 @@
 plugins {
-    id 'fabric-loom' version "${loom_version}"
-    id 'maven-publish'
+    id('net.fabricmc.fabric-loom-remap').version("${loom_version}")
+    id('maven-publish')
 }
 
-version = project.mod_version
-group = project.maven_group
+version = mod_version
+group = maven_group
 
 base {
-    archivesName = project.archives_base_name
+    archivesName = archives_base_name
 }
 
 loom {
@@ -15,8 +15,8 @@ loom {
 
 	mods {
 		archives_base_name {
-			sourceSet sourceSets.main
-			sourceSet sourceSets.client
+			sourceSet(sourceSets.main)
+			sourceSet(sourceSets.client)
 		}
 	}
 }
@@ -40,23 +40,21 @@ repositories {
 }
 
 dependencies {
-    minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-	testImplementation "net.fabricmc:fabric-loader-junit:${project.loader_version}"
-	mappings "net.fabricmc:yarn:${project.yarn_version}"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    minecraft("com.mojang:minecraft:${minecraft_version}")
+    modImplementation("net.fabricmc:fabric-loader:${loader_version}")
+	testImplementation("net.fabricmc:fabric-loader-junit:${loader_version}")
+	mappings("net.fabricmc:yarn:${yarn_version}:v2")
+    modImplementation("net.fabricmc.fabric-api:fabric-api:${fabric_version}")
 }
 
 processResources {
-    inputs.property "version", project.version
-    inputs.property "minecraft_version", project.minecraft_version
-    inputs.property "loader_version", project.loader_version
-    filteringCharset "UTF-8"
+    inputs.property("version", version)
+    inputs.property("minecraft_version", minecraft_version)
+    inputs.property("loader_version", loader_version)
+    filteringCharset = "UTF-8"
 
     filesMatching("fabric.mod.json") {
-        expand "version": project.version,
-                "minecraft_version": project.minecraft_version,
-                "loader_version": project.loader_version
+		expand(version: version, minecraft_version: minecraft_version, loader_version: loader_version)
     }
 }
 
@@ -85,7 +83,7 @@ java {
 
 jar {
     from("LICENSE") {
-        rename { "${it}_${project.archivesBaseName}" }
+        rename { "${it}_${archives_base_name}" }
     }
 }
 
@@ -93,8 +91,8 @@ jar {
 publishing {
     publications {
         create("mavenJava", MavenPublication) {
-            artifactId = project.archives_base_name
-            from components.java
+            artifactId = archives_base_name
+            from(components.java)
         }
     }
 
