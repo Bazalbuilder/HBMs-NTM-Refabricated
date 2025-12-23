@@ -1,10 +1,10 @@
 package com.bazalbuilder.hbm.block.machine;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;
-import net.minecraft.block.HorizontalFacingBlock;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.util.ActionResult;
@@ -14,18 +14,18 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 
 public abstract class AbstractMachineBlock extends BlockWithEntity {
-//	public static final DirectionProperty FACING;
-//	public static final BooleanProperty ACTIVE;
+	public static final DirectionProperty FACING = DirectionProperty.of("facing");
+	public static final BooleanProperty ACTIVE = BooleanProperty.of("active");
 
 	protected AbstractMachineBlock(Settings settings) {
 		super(settings);
-//		this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.NORTH).with(ACTIVE, false));
+		setDefaultState(getDefaultState().with(FACING, Direction.NORTH).with(ACTIVE, false));
 	}
 
-//	@Override
-//	public BlockState getPlacementState(ItemPlacementContext context) {
-//		return this.getDefaultState().with(FACING, context.getHorizontalPlayerFacing().getOpposite());
-//	}
+	@Override
+	protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+		builder.add(FACING, ACTIVE);
+	}
 
 	@Override
 	protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
@@ -38,9 +38,4 @@ public abstract class AbstractMachineBlock extends BlockWithEntity {
 	}
 
 	protected abstract void openScreen(World world, BlockPos pos, PlayerEntity player);
-
-//	static {
-//		FACING = HorizontalFacingBlock.FACING;
-//		ACTIVE = BooleanProperty.of("active");
-//	}
 }

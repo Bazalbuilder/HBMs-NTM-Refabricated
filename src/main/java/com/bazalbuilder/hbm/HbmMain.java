@@ -17,7 +17,7 @@
 
 package com.bazalbuilder.hbm;
 
-import com.bazalbuilder.hbm.block.HbmBlockEntities;
+import com.bazalbuilder.hbm.block.entity.HbmBlockEntities;
 import com.bazalbuilder.hbm.block.HbmBlocks;
 import com.bazalbuilder.hbm.item.HbmItemGroups;
 import com.bazalbuilder.hbm.item.HbmItems;
@@ -33,10 +33,10 @@ public class HbmMain implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		LOGGER.info("Initializing mod {}", MOD_ID);
+		LOGGER.info("Initializing mod \"{}\"", MOD_ID);
 		HbmItemGroups.initialize();
 		HbmItems.initialize();
-		HbmBlockEntities.initialize();
 		HbmBlocks.initialize();
+		HbmBlockEntities.initialize();
 	}
 }

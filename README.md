@@ -1,7 +1,20 @@
 # HBM's Nuclear Tech Mod - Refabricated (NTM-R) for 1.21.1
 
+## **THIS IS NOT WORLD-READY.**
+Due to the current state of this repository, this is not ready to be played in survival. If anyone wants to contribute
+to the progress of this fork, feel free to do so.
+
+---
+
 A port and rewrite of the original [Hbm's Nuclear Tech Mod](https://github.com/HbmMods/Hbm-s-Nuclear-Tech-GIT) to support
 **Fabric 1.21.1**.
+
+## Why fabric?
+Fabric in my opinion is much easier to understand, and part of that is because of the now-discontinued Yarn mappings.
+And there is less unnecessary content too.
+
+It's okay if you use Sinytra Connector, it's just that I can't help you with anything since it's a completely different
+mod loader.
 
 ## Installation Instructions
 

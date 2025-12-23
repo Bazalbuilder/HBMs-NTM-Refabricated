@@ -4,7 +4,6 @@ import com.bazalbuilder.hbm.block.entity.machine.ShredderBlockEntity;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;
-import net.minecraft.block.FurnaceBlock;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.screen.NamedScreenHandlerFactory;
@@ -15,13 +14,13 @@ import org.jetbrains.annotations.Nullable;
 public class ShredderBlock extends AbstractMachineBlock {
 	public static final MapCodec<ShredderBlock> CODEC = createCodec(ShredderBlock::new);
 
-	public ShredderBlock(Settings settings) {
-		super(settings);
+	@Override
+	protected MapCodec<ShredderBlock> getCodec() {
+		return CODEC;
 	}
 
-	@Override
-	protected MapCodec<? extends BlockWithEntity> getCodec() {
-		return CODEC;
+	public ShredderBlock(Settings settings) {
+		super(settings);
 	}
 
 	@Nullable

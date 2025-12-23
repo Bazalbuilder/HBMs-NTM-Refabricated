@@ -26,6 +26,8 @@ import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
 import net.minecraft.data.client.TexturedModel;
 
+import java.util.Arrays;
+
 public class HbmModelProvider extends FabricModelProvider {
 	public HbmModelProvider(FabricDataOutput output) {
 		super(output);
@@ -42,6 +44,10 @@ public class HbmModelProvider extends FabricModelProvider {
 		blockStateModelGenerator.registerSimpleCubeAll(HbmBlocks.SELLAFITE);
 		blockStateModelGenerator.registerSimpleCubeAll(HbmBlocks.ASPHALT);
 		blockStateModelGenerator.registerSingleton(HbmBlocks.SHREDDER, TexturedModel.ORIENTABLE_WITH_BOTTOM);
+
+		Arrays.stream(HbmBlocks.Ores.values()).forEach(
+			value -> blockStateModelGenerator.registerSimpleCubeAll(value.getBlock())
+		);
 	}
 
 	@Override
