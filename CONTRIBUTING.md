@@ -23,7 +23,7 @@ Make sure you have including the following:
 * Any practical use cases where the feature can be used;
 * The link to the original issue (if doing a PR)
 
-## Pull Requests
+### Pull Requests
 While doing a Pull Request, make sure you are following these guidelines:
 * Keep it concise: If you want to add multiple features, then open up pull requests for each feature. Do not cram features into
 a single PR.

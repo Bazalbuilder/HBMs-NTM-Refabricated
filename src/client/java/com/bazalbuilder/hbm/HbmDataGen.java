@@ -18,6 +18,7 @@
 package com.bazalbuilder.hbm;
 
 import com.bazalbuilder.hbm.datagen.HbmModelProvider;
+import com.bazalbuilder.hbm.datagen.lang.EnglishLangProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
@@ -26,6 +27,7 @@ public class HbmDataGen implements DataGeneratorEntrypoint {
 	@Override
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
+		pack.addProvider(EnglishLangProvider::new);
 		pack.addProvider(HbmModelProvider::new);
 	}
 }

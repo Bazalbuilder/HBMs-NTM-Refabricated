@@ -1,0 +1,4 @@
+{
+	"tool/tech_bleep": {"subtitle": "sound.hbm.tech_bleep", "sounds": ["hbm:tool/tech_bleep"]},
+	"tool/tech_boop": {"subtitle": "sound.hbm.tech_boop", "sounds": ["hbm:tool/tech_boop"]}
+}

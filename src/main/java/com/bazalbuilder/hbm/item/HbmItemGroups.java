@@ -57,7 +57,12 @@ public class HbmItemGroups {
 	}
 
 	public static void initialize() {
+		// Since we're using static initializers, we'll leave this as a no-op.
 		LOGGER.info("Initializing item groups for mod \"{}\"", MOD_ID);
+	}
+
+	public static void assignItemGroups() {
+
 	}
 
 	static {
@@ -97,5 +102,7 @@ public class HbmItemGroups {
 			.icon(() -> new ItemStack(Items.ACACIA_BOAT))
 			.displayName(Text.literal("HBM Consumables"))
 			.build());
+
+		assignItemGroups();
 	}
 }

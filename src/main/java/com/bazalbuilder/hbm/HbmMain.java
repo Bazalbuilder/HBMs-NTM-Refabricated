@@ -19,8 +19,10 @@ package com.bazalbuilder.hbm;
 
 import com.bazalbuilder.hbm.block.entity.HbmBlockEntities;
 import com.bazalbuilder.hbm.block.HbmBlocks;
+import com.bazalbuilder.hbm.event.HazardEvents;
 import com.bazalbuilder.hbm.item.HbmItemGroups;
 import com.bazalbuilder.hbm.item.HbmItems;
+import com.bazalbuilder.hbm.sound.HbmSounds;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,9 +36,15 @@ public class HbmMain implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		LOGGER.info("Initializing mod \"{}\"", MOD_ID);
-		HbmItemGroups.initialize();
 		HbmItems.initialize();
+		HbmItemGroups.initialize();
+
 		HbmBlocks.initialize();
 		HbmBlockEntities.initialize();
+
+		HbmSounds.initialize();
+
+		HazardEvents.initialize();
+		LOGGER.info("Finished initialization of mod \"{}\"", MOD_ID);
 	}
 }

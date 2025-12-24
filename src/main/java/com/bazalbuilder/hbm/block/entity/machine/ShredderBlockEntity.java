@@ -1,9 +1,8 @@
 package com.bazalbuilder.hbm.block.entity.machine;
 
 import com.bazalbuilder.hbm.block.entity.HbmBlockEntities;
-import com.bazalbuilder.hbm.energy.EnergyReceiver;
+import com.bazalbuilder.hbm.api.energy.EnergyReceiver;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.FurnaceBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.SidedInventory;
 import net.minecraft.item.ItemStack;

@@ -17,6 +17,7 @@
 
 package com.bazalbuilder.hbm.item;
 
+import com.bazalbuilder.hbm.item.tool.GeigerCounterItem;
 import com.bazalbuilder.hbm.util.RegistryUtils;
 import net.minecraft.item.Item;
 
@@ -27,6 +28,7 @@ import static com.bazalbuilder.hbm.HbmMain.MOD_ID;
 
 public class HbmItems {
 	public static final Item GUN_SPRAY;
+	public static final Item GEIGER_COUNTER;
 
 	private static Item createItem(Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
 		return itemFactory.apply(settings);
@@ -34,6 +36,7 @@ public class HbmItems {
 
 	private static void registerItems() {
 		RegistryUtils.registerItem("gun_spray", GUN_SPRAY);
+		RegistryUtils.registerItem("geiger_counter", GEIGER_COUNTER);
 	}
 
 	public static void initialize() {
@@ -43,6 +46,7 @@ public class HbmItems {
 
 	static {
 		GUN_SPRAY = createItem(Item::new, new Item.Settings());
+		GEIGER_COUNTER = createItem(GeigerCounterItem::new, new Item.Settings());
 
 		registerItems();
 	}

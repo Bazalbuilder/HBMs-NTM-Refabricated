@@ -53,5 +53,6 @@ public class HbmModelProvider extends FabricModelProvider {
 	@Override
 	public void generateItemModels(ItemModelGenerator itemModelGenerator) {
 		itemModelGenerator.register(HbmItems.GUN_SPRAY, Models.GENERATED);
+		itemModelGenerator.register(HbmItems.GEIGER_COUNTER, Models.GENERATED);
 	}
 }

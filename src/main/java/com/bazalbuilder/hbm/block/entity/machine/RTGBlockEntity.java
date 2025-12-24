@@ -1,7 +1,7 @@
 package com.bazalbuilder.hbm.block.entity.machine;
 
 import com.bazalbuilder.hbm.block.entity.HbmBlockEntities;
-import com.bazalbuilder.hbm.energy.EnergyProvider;
+import com.bazalbuilder.hbm.api.energy.EnergyProvider;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.SidedInventory;

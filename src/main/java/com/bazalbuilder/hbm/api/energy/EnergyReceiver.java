@@ -1,4 +1,4 @@
-package com.bazalbuilder.hbm.energy;
+package com.bazalbuilder.hbm.api.energy;
 
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;

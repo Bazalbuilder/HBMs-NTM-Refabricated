@@ -1,4 +1,4 @@
-package com.bazalbuilder.hbm.energy;
+package com.bazalbuilder.hbm.api.energy;
 
 public interface Powerable {
 	long getEnergy();

@@ -23,14 +23,18 @@ import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;
 
-public class EnglishLanguageProvider extends FabricLanguageProvider {
+public class EnglishLangProvider extends FabricLanguageProvider {
 
-	protected EnglishLanguageProvider(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+	public EnglishLangProvider(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
 		super(dataOutput, "en_us", registryLookup);
 	}
 
 	@Override
 	public void generateTranslations(RegistryWrapper.WrapperLookup wrapperLookup, TranslationBuilder translationBuilder) {
-
+		translationBuilder.add("geiger.title", "GEIGER COUNTER");
+		translationBuilder.add("geiger.chunkRad", "Current chunk radiation:");
+		translationBuilder.add("geiger.envRad", "Total environmental radiation:");
+		translationBuilder.add("geiger.playerRad", "Player contamination:");
+		translationBuilder.add("geiger.playerRes", "Player resistance:");
 	}
 }

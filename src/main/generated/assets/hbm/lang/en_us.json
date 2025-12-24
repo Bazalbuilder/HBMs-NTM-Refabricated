@@ -1,0 +1,7 @@
+{
+  "geiger.chunkRad": "Current chunk radiation:",
+  "geiger.envRad": "Total environmental radiation:",
+  "geiger.playerRad": "Player contamination:",
+  "geiger.playerRes": "Player resistance:",
+  "geiger.title": "GEIGER COUNTER"
+}
