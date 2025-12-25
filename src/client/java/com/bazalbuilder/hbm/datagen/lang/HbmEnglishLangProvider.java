@@ -23,9 +23,9 @@ import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;
 
-public class EnglishLangProvider extends FabricLanguageProvider {
+public class HbmEnglishLangProvider extends FabricLanguageProvider {
 
-	public EnglishLangProvider(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+	public HbmEnglishLangProvider(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
 		super(dataOutput, "en_us", registryLookup);
 	}
 

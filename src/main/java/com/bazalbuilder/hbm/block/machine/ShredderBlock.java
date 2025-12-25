@@ -3,7 +3,6 @@ package com.bazalbuilder.hbm.block.machine;
 import com.bazalbuilder.hbm.block.entity.machine.ShredderBlockEntity;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.screen.NamedScreenHandlerFactory;
@@ -23,17 +22,14 @@ public class ShredderBlock extends AbstractMachineBlock {
 		super(settings);
 	}
 
-	@Nullable
 	@Override
-	public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+	public @Nullable BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
 		return new ShredderBlockEntity(pos, state);
 	}
 
-	@Override
 	protected void openScreen(World world, BlockPos pos, PlayerEntity player) {
-		BlockEntity entity = world.getBlockEntity(pos);
-		if (entity instanceof ShredderBlockEntity) {
-			player.openHandledScreen((NamedScreenHandlerFactory) entity);
-		}
+		BlockEntity blockEntity = world.getBlockEntity(pos);
+		if (blockEntity instanceof ShredderBlockEntity)
+			player.openHandledScreen((NamedScreenHandlerFactory) blockEntity);
 	}
 }

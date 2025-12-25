@@ -10,8 +10,8 @@ import net.minecraft.util.math.BlockPos;
 public abstract class AbstractMachineBlockEntity extends BlockEntity {
 	protected DefaultedList<ItemStack> inventory;
 
-	public AbstractMachineBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state, int invSize) {
+	public AbstractMachineBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state, int inventorySize) {
 		super(type, pos, state);
-		this.inventory = DefaultedList.ofSize(invSize, ItemStack.EMPTY);
+		this.inventory = DefaultedList.ofSize(inventorySize, ItemStack.EMPTY);
 	}
 }

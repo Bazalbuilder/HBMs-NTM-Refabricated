@@ -21,10 +21,7 @@ import com.bazalbuilder.hbm.block.HbmBlocks;
 import com.bazalbuilder.hbm.item.HbmItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.data.client.BlockStateModelGenerator;
-import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.Models;
-import net.minecraft.data.client.TexturedModel;
+import net.minecraft.data.client.*;
 
 import java.util.Arrays;
 
@@ -44,10 +41,6 @@ public class HbmModelProvider extends FabricModelProvider {
 		blockStateModelGenerator.registerSimpleCubeAll(HbmBlocks.SELLAFITE);
 		blockStateModelGenerator.registerSimpleCubeAll(HbmBlocks.ASPHALT);
 		blockStateModelGenerator.registerSingleton(HbmBlocks.SHREDDER, TexturedModel.ORIENTABLE_WITH_BOTTOM);
-
-		Arrays.stream(HbmBlocks.Ores.values()).forEach(
-			value -> blockStateModelGenerator.registerSimpleCubeAll(value.getBlock())
-		);
 	}
 
 	@Override

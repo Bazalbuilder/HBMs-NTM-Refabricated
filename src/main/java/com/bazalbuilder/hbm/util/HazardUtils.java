@@ -1,10 +1,8 @@
 package com.bazalbuilder.hbm.util;
 
-import com.bazalbuilder.hbm.event.HazardEvents;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
-import net.minecraft.world.World;
 
 public class HazardUtils {
 	private static Formatting getFormattingFromRad(double rad) {
@@ -25,11 +23,11 @@ public class HazardUtils {
 	}
 
 	public static void printGeigerData(PlayerEntity player) {
-		World world = player.getWorld();
+//		World world = player.getWorld();
 
 		double exposure = 0d;
 
-		double radiation = HazardEvents.radiationProxy.getRadiation(world, player.getBlockPos()) / 10d;
+		double radiation = 0d;
 		double envRadiation = 0d;
 
 		double resistance = 0d;

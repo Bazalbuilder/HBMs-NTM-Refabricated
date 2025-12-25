@@ -17,10 +17,12 @@
 
 package com.bazalbuilder.hbm.util;
 
+import com.bazalbuilder.hbm.material.Material;
+import com.bazalbuilder.hbm.registry.HbmRegistries;
+import com.bazalbuilder.hbm.registry.HbmRegistryKeys;
 import net.minecraft.block.Block;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.entity.attribute.ClampedEntityAttribute;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -30,7 +32,6 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 
-import static com.bazalbuilder.hbm.HbmMain.LOGGER;
 import static com.bazalbuilder.hbm.HbmMain.MOD_ID;
 
 public class RegistryUtils {
@@ -51,12 +52,14 @@ public class RegistryUtils {
 	}
 
 	public static void registerItem(String name, Item item) {
-		Identifier id = Identifier.of(MOD_ID, name);
-		RegistryKey<Item> itemRegistryKey = RegistryKey.of(RegistryKeys.ITEM, id);
-
-		LOGGER.info(id.toTranslationKey());
+		RegistryKey<Item> itemRegistryKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MOD_ID, name));
 
 		Registry.register(Registries.ITEM, itemRegistryKey, item);
+	}
+
+	public static void registerMaterial(String name, Material material) {
+		RegistryKey<Material> materialRegistryKey = RegistryKey.of(HbmRegistryKeys.MATERIAL, Identifier.of(MOD_ID, name));
+		Registry.register(HbmRegistries.MATERIALS, materialRegistryKey, material);
 	}
 
 	public static void registerEntityAttribute(Identifier id, EntityAttribute entityAttribute) {

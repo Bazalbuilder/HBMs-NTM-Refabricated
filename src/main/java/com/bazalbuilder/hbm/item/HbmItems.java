@@ -21,6 +21,7 @@ import com.bazalbuilder.hbm.item.tool.GeigerCounterItem;
 import com.bazalbuilder.hbm.util.RegistryUtils;
 import net.minecraft.item.Item;
 
+import java.util.HashMap;
 import java.util.function.Function;
 
 import static com.bazalbuilder.hbm.HbmMain.LOGGER;
@@ -30,6 +31,11 @@ public class HbmItems {
 	public static final Item GUN_SPRAY;
 	public static final Item GEIGER_COUNTER;
 
+	public static void initialize() {
+		// Since we're using static initializers, we'll leave this as a no-op.
+		LOGGER.info("Initializing items for mod \"{}\"", MOD_ID);
+	}
+
 	private static Item createItem(Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
 		return itemFactory.apply(settings);
 	}
@@ -37,11 +43,6 @@ public class HbmItems {
 	private static void registerItems() {
 		RegistryUtils.registerItem("gun_spray", GUN_SPRAY);
 		RegistryUtils.registerItem("geiger_counter", GEIGER_COUNTER);
-	}
-
-	public static void initialize() {
-		// Since we're using static initializers, we'll leave this as a no-op.
-		LOGGER.info("Initializing items for mod \"{}\"", MOD_ID);
 	}
 
 	static {

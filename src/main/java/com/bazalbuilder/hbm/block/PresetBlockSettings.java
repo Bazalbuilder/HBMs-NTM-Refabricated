@@ -17,12 +17,6 @@
 
 package com.bazalbuilder.hbm.block;
 
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.MapColor;
-
 public class PresetBlockSettings {
-	public static AbstractBlock.Settings ore(boolean isDeepslate, String name) {
-		return AbstractBlock.Settings.create()
-			.mapColor(MapColor.STONE_GRAY);
-	}
+
 }
