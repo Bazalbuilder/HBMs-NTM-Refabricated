@@ -1,8 +1,10 @@
 # HBM's Nuclear Tech Mod - Refabricated (NTM-R) for 1.21.1
 
-## **THIS IS NOT WORLD-READY.**
+## **DANGER: THIS IS NOT WORLD-READY.**
 Due to the current state of this repository, this is not ready to be played in survival. If anyone wants to contribute
 to the progress of this fork so that it can be played in survival, feel free to do so.
+
+It's on you if you decide to include this mod at its current state in your world.
 
 ---
 

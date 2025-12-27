@@ -17,11 +17,18 @@
 
 package com.bazalbuilder.hbm;
 
+import com.bazalbuilder.hbm.client.render.entity.TorexNukeEntityRenderer;
+import com.bazalbuilder.hbm.entity.HbmEntityTypes;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 
+@Environment(EnvType.CLIENT)
 public class HbmClient implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
+		EntityRendererRegistry.register(HbmEntityTypes.TOREX_ENTITY, TorexNukeEntityRenderer::new);
 	}
 }

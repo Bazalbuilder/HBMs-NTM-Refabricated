@@ -1,6 +1,6 @@
 package com.bazalbuilder.hbm.item.tool;
 
-import com.bazalbuilder.hbm.sound.HbmSounds;
+import com.bazalbuilder.hbm.sound.HbmSoundEvents;
 import com.bazalbuilder.hbm.util.HazardUtils;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -18,7 +18,7 @@ public class GeigerCounterItem extends Item {
 	@Override
 	public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
 		if (!world.isClient) {
-			world.playSound(user, user.getX(), user.getY(), user.getZ(), HbmSounds.ITEM_TECH_BOOP, SoundCategory.PLAYERS, 1.0f, 1.0f);
+			world.playSound(user, user.getX(), user.getY(), user.getZ(), HbmSoundEvents.TECH_BOOP, SoundCategory.PLAYERS, 1.0f, 1.0f);
 			HazardUtils.printGeigerData(user);
 			return TypedActionResult.success(this.asItem().getDefaultStack());
 		}

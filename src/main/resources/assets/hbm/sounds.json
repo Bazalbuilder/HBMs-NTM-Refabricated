@@ -1,4 +1,6 @@
 {
 	"tool/tech_bleep": {"subtitle": "sound.hbm.tech_bleep", "sounds": ["hbm:tool/tech_bleep"]},
-	"tool/tech_boop": {"subtitle": "sound.hbm.tech_boop", "sounds": ["hbm:tool/tech_boop"]}
+	"tool/tech_boop": {"subtitle": "sound.hbm.tech_boop", "sounds": ["hbm:tool/tech_boop"]},
+
+	"weapon/nuclear_explosion": {"subtitle": "sound.hbm.nuclear_explosion", "sounds": ["hbm:weapon/nuclear_explosion"]}
 }

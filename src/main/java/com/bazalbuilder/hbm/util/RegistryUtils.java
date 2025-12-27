@@ -23,15 +23,22 @@ import com.bazalbuilder.hbm.registry.HbmRegistryKeys;
 import net.minecraft.block.Block;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.particle.ParticleEffect;
+import net.minecraft.particle.ParticleType;
+import net.minecraft.particle.SimpleParticleType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 
+import static com.bazalbuilder.hbm.HbmMain.LOGGER;
 import static com.bazalbuilder.hbm.HbmMain.MOD_ID;
 
 public class RegistryUtils {
@@ -62,9 +69,24 @@ public class RegistryUtils {
 		Registry.register(HbmRegistries.MATERIALS, materialRegistryKey, material);
 	}
 
+	public static void registerSoundEvent(String name, SoundEvent event) {
+		RegistryKey<SoundEvent> soundEventRegistryKey = RegistryKey.of(RegistryKeys.SOUND_EVENT, Identifier.of(MOD_ID, name));
+		LOGGER.warn(name);
+		Registry.register(Registries.SOUND_EVENT, soundEventRegistryKey, event);
+	}
+
+	public static void registerEntityType(String name, EntityType<?> entityType) {
+		RegistryKey<EntityType<?>> entityTypeRegistryKey = RegistryKey.of(RegistryKeys.ENTITY_TYPE, Identifier.of(MOD_ID, name));
+		Registry.register(Registries.ENTITY_TYPE, entityTypeRegistryKey, entityType);
+	}
+
+	public static void registerParticleType(Identifier id, ParticleType<?> particleType) {
+		RegistryKey<ParticleType<?>> particleTypeRegistryKey = RegistryKey.of(RegistryKeys.PARTICLE_TYPE, id);
+		Registry.register(Registries.PARTICLE_TYPE, particleTypeRegistryKey, particleType);
+	}
+
 	public static void registerEntityAttribute(Identifier id, EntityAttribute entityAttribute) {
 		RegistryKey<EntityAttribute> entityAttributeRegistryKey = RegistryKey.of(RegistryKeys.ATTRIBUTE, id);
-
 		Registry.register(Registries.ATTRIBUTE, entityAttributeRegistryKey, entityAttribute);
 	}
 }

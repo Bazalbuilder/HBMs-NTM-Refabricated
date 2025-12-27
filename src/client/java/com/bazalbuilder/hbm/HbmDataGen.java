@@ -17,11 +17,8 @@
 
 package com.bazalbuilder.hbm;
 
-import com.bazalbuilder.hbm.datagen.HbmModelProvider;
-import com.bazalbuilder.hbm.datagen.lang.HbmEnglishLangProvider;
-import com.bazalbuilder.hbm.datagen.tag.HbmBlockTagProvider;
-import com.bazalbuilder.hbm.datagen.tag.HbmItemTagProvider;
-import com.bazalbuilder.hbm.datagen.tag.HbmMaterialTagProvider;
+import com.bazalbuilder.hbm.client.datagen.HbmModelProvider;
+import com.bazalbuilder.hbm.client.datagen.lang.HbmEnglishLangProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
@@ -33,8 +30,8 @@ public class HbmDataGen implements DataGeneratorEntrypoint {
 		pack.addProvider(HbmEnglishLangProvider::new);
 		pack.addProvider(HbmModelProvider::new);
 
-		pack.addProvider(HbmMaterialTagProvider::new);
-		pack.addProvider(HbmBlockTagProvider::new);
-		pack.addProvider(HbmItemTagProvider::new);
+//		pack.addProvider(HbmMaterialTagProvider::new);
+//		pack.addProvider(HbmBlockTagProvider::new);
+//		pack.addProvider(HbmItemTagProvider::new);
 	}
 }

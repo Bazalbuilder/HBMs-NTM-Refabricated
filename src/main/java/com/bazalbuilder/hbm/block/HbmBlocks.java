@@ -44,7 +44,7 @@ public class HbmBlocks {
 
 	public static void initialize() {
 		// Since we're using static initializers, we'll leave this as a no-op.
-		LOGGER.info("Initialized blocks for mod \"{}\"", MOD_ID);
+		LOGGER.info("Initializing blocks for mod \"{}\"", MOD_ID);
 	}
 
 	private static Block createBlock(Function<AbstractBlock.Settings, Block> blockFactory, AbstractBlock.Settings settings) {

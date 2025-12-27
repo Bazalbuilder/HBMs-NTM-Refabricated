@@ -1,5 +1,6 @@
 package com.bazalbuilder.hbm.block.machine;
 
+import com.bazalbuilder.hbm.entity.effect.TorexNukeEntity;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
@@ -37,6 +38,9 @@ public abstract class AbstractMachineBlock extends BlockWithEntity {
 
 	@Override
 	protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
+		// FIXME DEBUG
+		TorexNukeEntity.statFacStandard(world, 0, 0, 0, 100);
+
 		if (world.isClient) {
 			return ActionResult.SUCCESS;
 		} else {
