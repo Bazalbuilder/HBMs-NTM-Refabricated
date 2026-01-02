@@ -29,9 +29,5 @@ public class HbmDataGen implements DataGeneratorEntrypoint {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 		pack.addProvider(HbmEnglishLangProvider::new);
 		pack.addProvider(HbmModelProvider::new);
-
-//		pack.addProvider(HbmMaterialTagProvider::new);
-//		pack.addProvider(HbmBlockTagProvider::new);
-//		pack.addProvider(HbmItemTagProvider::new);
 	}
 }

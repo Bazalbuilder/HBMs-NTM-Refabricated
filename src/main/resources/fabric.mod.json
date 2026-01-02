@@ -23,7 +23,14 @@
 			"com.bazalbuilder.hbm.HbmMain"
     ]
   },
-  "depends": {
+	"mixins": [
+		"hbm.mixins.json",
+		{
+			"config": "hbm.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
     "fabricloader": ">=${loader_version}",
     "minecraft": "${minecraft_version}",
 		"java": ">=21",

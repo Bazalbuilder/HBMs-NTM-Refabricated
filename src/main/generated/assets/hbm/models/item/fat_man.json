@@ -1,0 +1,7 @@
+{
+  "parent": "hbm:block/obj_model",
+  "model": "hbm:models/obj/fat_man.obj",
+  "textures": {
+    "texture0": "minecraft:textures/obj/fat_man.png"
+  }
+}

@@ -5,5 +5,5 @@ package com.bazalbuilder.hbm.config;
  * @author bazal
  */
 public class TemporaryConstants {
-
+	public static final int FAT_MAN_MAX_RADIUS = 175;
 }

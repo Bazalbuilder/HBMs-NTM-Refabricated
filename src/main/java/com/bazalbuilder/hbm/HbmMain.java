@@ -17,7 +17,7 @@
 
 package com.bazalbuilder.hbm;
 
-import com.bazalbuilder.hbm.block.entity.HbmBlockEntities;
+import com.bazalbuilder.hbm.block.entity.HbmBlockEntityTypes;
 import com.bazalbuilder.hbm.block.HbmBlocks;
 import com.bazalbuilder.hbm.entity.HbmEntityTypes;
 import com.bazalbuilder.hbm.item.HbmItemGroups;
@@ -43,11 +43,11 @@ public class HbmMain implements ModInitializer {
 		HbmItems.initialize();
 		HbmItemGroups.initialize();
 
-		HbmBlockEntities.initialize();
+		HbmBlockEntityTypes.initialize();
 		HbmBlocks.initialize();
 
 		HbmSoundEvents.initialize();
 
-		LOGGER.info("Finished initialization of mod \"{}\"", MOD_ID);
+		LOGGER.info("Finished COMMON initialization of mod \"{}\"", MOD_ID);
 	}
 }

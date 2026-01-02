@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "com.bazalbuilder.hbm.mixin.client",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "BakedModelManagerAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+	}
+}

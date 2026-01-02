@@ -18,35 +18,35 @@
 package com.bazalbuilder.hbm.client.datagen;
 
 import com.bazalbuilder.hbm.block.HbmBlocks;
+import com.bazalbuilder.hbm.client.obj.ObjUtils;
 import com.bazalbuilder.hbm.item.HbmItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.*;
+import net.minecraft.util.Identifier;
 
-import java.util.Arrays;
+import java.util.Map;
+
+import static com.bazalbuilder.hbm.HbmMain.MOD_ID;
 
 public class HbmModelProvider extends FabricModelProvider {
 	public HbmModelProvider(FabricDataOutput output) {
 		super(output);
 	}
 
-
-
 	@Override
 	public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-		blockStateModelGenerator.registerSimpleCubeAll(HbmBlocks.GRAPHITIC_SCHIST);
-		blockStateModelGenerator.registerSimpleCubeAll(HbmBlocks.DEPTH_STONE);
-		blockStateModelGenerator.registerSimpleCubeAll(HbmBlocks.NETHER_DEPTH_STONE);
-		blockStateModelGenerator.registerSimpleCubeAll(HbmBlocks.LIGHTSTONE);
-		blockStateModelGenerator.registerSimpleCubeAll(HbmBlocks.LIMESTONE);
-		blockStateModelGenerator.registerSimpleCubeAll(HbmBlocks.SLAKED_SELLAFITE);
-		blockStateModelGenerator.registerSimpleCubeAll(HbmBlocks.SELLAFITE);
-		blockStateModelGenerator.registerSimpleCubeAll(HbmBlocks.ASPHALT);
+		blockStateModelGenerator.registerSimpleCubeAll(HbmBlocks.OBJ_MODEL);
 		blockStateModelGenerator.registerSingleton(HbmBlocks.SHREDDER, TexturedModel.ORIENTABLE_WITH_BOTTOM);
+
+		blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(HbmBlocks.FACING_OBJ_MODEL, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(HbmBlocks.OBJ_MODEL, "")))
+			.coordinate(BlockStateModelGenerator.createNorthDefaultHorizontalRotationStates()));
 	}
 
 	@Override
 	public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+		ObjUtils.generateObjJson(HbmBlocks.FAT_MAN.asItem(), Identifier.of("hbm:models/obj/fat_man.obj"), Map.of("texture0", Identifier.of("textures/obj/fat_man.png")), itemModelGenerator.writer);
+
 		itemModelGenerator.register(HbmItems.GUN_SPRAY, Models.GENERATED);
 		itemModelGenerator.register(HbmItems.GEIGER_COUNTER, Models.GENERATED);
 	}

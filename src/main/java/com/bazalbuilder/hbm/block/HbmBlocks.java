@@ -17,6 +17,9 @@
 
 package com.bazalbuilder.hbm.block;
 
+import com.bazalbuilder.hbm.block.bomb.FatManNukeBlock;
+import com.bazalbuilder.hbm.block.debug.FacingObjModelBlock;
+import com.bazalbuilder.hbm.block.machine.AssemblyMachineBlock;
 import com.bazalbuilder.hbm.block.machine.ShredderBlock;
 import com.bazalbuilder.hbm.util.RegistryUtils;
 import net.minecraft.block.AbstractBlock;
@@ -28,19 +31,19 @@ import static com.bazalbuilder.hbm.HbmMain.LOGGER;
 import static com.bazalbuilder.hbm.HbmMain.MOD_ID;
 
 public class HbmBlocks {
-	// Rocks
-	public static final Block GRAPHITIC_SCHIST;
-	public static final Block DEPTH_STONE;
-	public static final Block NETHER_DEPTH_STONE;
-	public static final Block LIGHTSTONE;
-	public static final Block LIMESTONE;
-	public static final Block SLAKED_SELLAFITE;
-	public static final Block SELLAFITE;
-	public static final Block ASPHALT;
+	// Debug
+	public static final Block OBJ_MODEL;
+	public static final Block FACING_OBJ_MODEL;
+
+	// Bombs
+	public static final Block FAT_MAN;
 
 	// Machines
 	public static final Block SHREDDER;
-	public static final Block RTG;
+	public static final Block ASSEMBLY_MACHINE;
+
+	// Ores
+	public static final Block OIL_DEPOSIT;
 
 	public static void initialize() {
 		// Since we're using static initializers, we'll leave this as a no-op.
@@ -52,35 +55,35 @@ public class HbmBlocks {
 	}
 
 	private static void registerBlocks() {
-		// Rocks
-		RegistryUtils.registerBlock("graphitic_schist", GRAPHITIC_SCHIST, true);
-		RegistryUtils.registerBlock("depth_stone", DEPTH_STONE, true);
-		RegistryUtils.registerBlock("nether_depth_stone", NETHER_DEPTH_STONE, true);
-		RegistryUtils.registerBlock("lightstone", LIGHTSTONE, true);
-		RegistryUtils.registerBlock("limestone", LIMESTONE, true);
-		RegistryUtils.registerBlock("slaked_sellafite", SLAKED_SELLAFITE, true);
-		RegistryUtils.registerBlock("sellafite", SELLAFITE, true);
-		RegistryUtils.registerBlock("asphalt", ASPHALT, true);
+		// Debug
+		RegistryUtils.registerBlock("obj_model", OBJ_MODEL, false);
+		RegistryUtils.registerBlock("facing_obj_model", FACING_OBJ_MODEL, false);
+
+		// Bombs
+		RegistryUtils.registerBlock("fat_man", FAT_MAN, true);
 
 		// Machines
 		RegistryUtils.registerBlock("shredder", SHREDDER, true);
-		RegistryUtils.registerBlock("rtg", RTG, true);
+		RegistryUtils.registerBlock("assembly_machine", ASSEMBLY_MACHINE, true);
+
+		// Ores
+		RegistryUtils.registerBlock("oil_deposit", OIL_DEPOSIT, true);
 	}
 
 	static {
-		// Rocks
-		GRAPHITIC_SCHIST = createBlock(Block::new, AbstractBlock.Settings.create());
-		DEPTH_STONE = createBlock(Block::new, AbstractBlock.Settings.create());
-		NETHER_DEPTH_STONE = createBlock(Block::new, AbstractBlock.Settings.create());
-		LIGHTSTONE = createBlock(Block::new, AbstractBlock.Settings.create());
-		LIMESTONE = createBlock(Block::new, AbstractBlock.Settings.create());
-		SLAKED_SELLAFITE = createBlock(Block::new, AbstractBlock.Settings.create());
-		SELLAFITE = createBlock(Block::new, AbstractBlock.Settings.create());
-		ASPHALT = createBlock(Block::new, AbstractBlock.Settings.create());
+		// Debug
+		OBJ_MODEL = createBlock(Block::new, AbstractBlock.Settings.create());
+		FACING_OBJ_MODEL = createBlock(FacingObjModelBlock::new, AbstractBlock.Settings.create());
+
+		// Bombs
+		FAT_MAN = createBlock(FatManNukeBlock::new, AbstractBlock.Settings.create().nonOpaque());
 
 		// Machines
 		SHREDDER = createBlock(ShredderBlock::new, AbstractBlock.Settings.create());
-		RTG = createBlock(Block::new, AbstractBlock.Settings.create());
+		ASSEMBLY_MACHINE = createBlock(AssemblyMachineBlock::new, AbstractBlock.Settings.create());
+
+		// Ores
+		OIL_DEPOSIT = createBlock(Block::new, AbstractBlock.Settings.create());
 
 		registerBlocks();
 	}
